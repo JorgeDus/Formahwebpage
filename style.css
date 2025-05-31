@@ -546,17 +546,6 @@ footer {
 
 /* Responsive styles */
 
-@media (max-width: 600px) {
-    .masonry-gallery { /* Or .gallery-grid */
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-auto-rows: 10px;
-        column-gap: 10px;
-    }
-    /* Adjust spans for mobile if desired */
-    .gallery-item--landscape { grid-row: span 20; }
-    .gallery-item--portrait  { grid-row: span 35; }
-    .gallery-item--square    { grid-row: span 28; }
-}
 @media (max-width: 1024px) {
     .home-content h1 {
         font-size: 3.5rem;
@@ -578,7 +567,7 @@ footer {
     }
 
     .home-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.0rem;
     }
 
     .home-content p {
