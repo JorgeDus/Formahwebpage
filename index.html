@@ -16,17 +16,54 @@
 </head>
 <body>
     <!-- Header with navigation -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">FORMAH STUDIO</a>
+<header>
+    <div class="container header-container">
+
+        <a href="#home" class="logo-link">
+            <img src="imagenes/FORMAH.png" alt="FORMAH STUDIO Logo" class="header-logo-img">
+        </a>
+
+
+        <div class="header-desktop-nav-area">
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <a href="index.html" class="lang-link active-lang">ES</a>
+                <span>|</span>
+                <a href="index_en.html" class="lang-link">EN</a>
+            </div>
+        </div>
+
+
+        <button class="nav-toggle" aria-label="toggle navigation" aria-expanded="false">
+            <span class="hamburger-icon"></span>
+        </button>
+
+        <nav class="nav mobile-nav-menu">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#gallery">Galería</a></li>
                 <li><a href="#about">Sobre Nosotros</a></li>
                 <li><a href="#contact">Contacto</a></li>
+                <li class="mobile-lang-switcher-item">
+                    <div class="language-switcher">
+                        <a href="index.html" class="lang-link active-lang">ES</a>
+                        <span>|</span>
+                        <a href="index_en.html" class="lang-link">EN</a>
+                    </div>
+                </li>
             </ul>
-        </div>
-    </header>
+        </nav>
+
+    </div>
+</header>
+
 
 <!-- Home section -->
 <section id="home">
@@ -393,7 +430,7 @@
         <p>
             Nuestra forma de trabajar es cercana y colaborativa. Escuchamos, preguntamos, proponemos y cuidamos cada detalle. Nos adaptamos a cada proyecto y a cada equipo, porque sabemos que cada idea es distinta y merece una mirada a medida.
         </p>
-        <p class="artist-name">Nicolas Dussert</p>
+        <p class="artist-name">Nicolás Dussert</p>
     </div>
 </section>
 
@@ -403,6 +440,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h2>Contacto</h2>
+                    <p>info@formah.studio</p>
                     <p>Siempre estamos abiertos a nuevos proyectos y colaboraciones. Comparte tu visión con nosotros y la transformaremos en visualizaciones 3D.</p>
                 </div>
 
@@ -423,7 +461,7 @@
                             <textarea id="project" name="project" required></textarea>
                         </div>
 
-                        <input type="hidden" name="_next" value="https://jorgedus.github.io/Formahwebpage/thank-you.html">
+                        <input type="hidden" name="_next" value="https://jorgedus.github.io/ser3dstudiotest/thank-you.html">
                         <input type="hidden" name="_subject" value="New Submission from Portfolio Website!">
                         <input type="hidden" name="_captcha" value="false">
 
@@ -437,7 +475,11 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-container">
-            <div class="footer-logo">FORMAH STUDIO</div>
+            <div class="footer-logo-container">
+                <a href="#home">
+                    <img src="imagenes/FORMAH.png" alt="FORMAH STUDIO logo" class="footer-logo-img">
+                </a>
+            </div>
 
             <ul class="footer-links">
                 <li><a href="#home">Home</a></li>
@@ -449,13 +491,13 @@
 
             <ul class="social-links">
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                    <a href="https://www.instagram.com/formah.studio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                        <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="https://www.behance.net/ndussertv" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                        <i class="fa-brands fa-behance"></i>
                 </li>
             </ul>
         </div>
@@ -489,6 +531,34 @@
 
 
         // --- Keep Your Existing Header Scroll / Smooth Scroll JS Here ---
+
+            // === Hamburger Menu Toggle ===
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav'); // The <nav> element
+    const navLinks = document.querySelectorAll('.nav-links a'); // All links in nav
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('nav-open');
+            // Toggle aria-expanded attribute for accessibility
+            const isExpanded = navMenu.classList.contains('nav-open');
+            navToggle.setAttribute('aria-expanded', isExpanded);
+
+            // Optional: Toggle body scroll
+            // document.body.classList.toggle('no-scroll', isExpanded);
+        });
+    }
+
+    // Close menu when a link is clicked (for single-page navigation)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('nav-open')) {
+                navMenu.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                // document.body.classList.remove('no-scroll');
+            }
+        });
+    });
 
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');

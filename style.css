@@ -17,7 +17,7 @@
     font-family: 'FontFirmaArtista'; /* Choose a name for this font */
     src: url('fonts/JhonHalend-Regular.woff2') format('woff2'), /* Super Modern Browsers */
          url('fonts/JhonHalend-Regular.woff') format('woff');   /* Modern Browsers */
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -28,7 +28,7 @@
          url('fonts/Fieldstones-Regular.ttf') format('truetype'); /* Older Browsers / Fallback */
     /* If you only have TTF, just use that line: */
     /* src: url('fonts/NavLinkFont.ttf') format('truetype'); */
-    font-weight: 100; /* Or the weight this font file represents */
+    font-weight: 400; /* Or the weight this font file represents */
     font-style: normal;  /* Or italic if applicable */
 }
 
@@ -64,7 +64,7 @@ h1, h2, h3, h4 {
     padding: 0 20px;
 }
 
-/* Header styles - inspired by Bobak */
+/* Header styles */
 header {
     position: fixed;
     top: 0;
@@ -73,13 +73,13 @@ header {
     padding: 30px 0;
     z-index: 1000;
     transition: background-color 0.3s ease, padding 0.3s ease;
-    mix-blend-mode: difference;
+    /* background-color: transparent; */ /* Consider if this is needed or if it should be naturally transparent */
 }
 
 header.scrolled {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Solid white background */
     padding: 15px 0;
-    mix-blend-mode: normal;
+    /* mix-blend-mode: normal; */ /* Remove if base mix-blend-mode is gone */
 }
 
 .header-container {
@@ -88,41 +88,48 @@ header.scrolled {
     align-items: center;
 }
 
-.logo {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: -0.03em;
-}
-
-header.scrolled .logo {
-    color: #000000;
-}
-
-.nav-links {
+.header-right-content {
     display: flex;
+    align-items: center;
+}
+
+.logo-link { /* For the <a> tag wrapping the header image logo */
+    display: inline-block;
+    line-height: 0;
+    text-decoration: none; /* Just in case, though img inside shouldn't underline */
+}
+
+.header-logo-img {
+    height: 45px;
+    width: auto;
+    display: block;
+    filter: invert(1); /* Assumes dark logo file, appears light initially */
+    transition: filter 0.3s ease;
+}
+
+/* Desktop Navigation Area */
+.header-desktop-nav-area {
+    display: flex; /* Show on desktop, arrange nav and lang switcher */
+    align-items: center;
+}
+nav.desktop-nav ul.nav-links { /* Desktop specific nav links */
+    display: flex; /* Horizontal list */
     list-style: none;
+    padding: 0; margin: 0;
 }
-
-.nav-links li {
-    margin-left: 40px;
+nav.desktop-nav ul.nav-links li {
+    margin-left: 40px; /* Your desktop spacing */
 }
-
-.nav-links a {
+nav.desktop-nav ul.nav-links a {
+    /* Your desktop link styles (color, font, etc.) */
     text-decoration: none;
     color: #ffffff;
     font-size: 1.2rem;
+    font-family: 'Headers', Arial, sans-serif;
     position: relative;
     transition: color 0.3s ease;
-    font-family: 'Headers';
 }
-
-header.scrolled .nav-links a {
-    color: #000000;
-}
-
-.nav-links a::after {
+nav.desktop-nav ul.nav-links a::after { /* Desktop underline effect */
     content: '';
     position: absolute;
     width: 0;
@@ -132,13 +139,105 @@ header.scrolled .nav-links a {
     background-color: #ffffff;
     transition: width 0.3s ease;
 }
+nav.desktop-nav ul.nav-links a:hover::after {
+    width: 100%;
+}
 
-header.scrolled .nav-links a::after {
+/* Mobile Slide-out Menu - HIDDEN on desktop (off-screen) */
+nav.mobile-nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(5px);
+    transform: translateX(-100%); /* Initially hidden */
+    transition: transform 0.4s ease-in-out;
+    z-index: 999;
+    padding-top: 70px;
+    overflow-y: auto;
+}
+nav.mobile-nav-menu.nav-open { /* JS adds .nav-open */
+    transform: translateX(0%);
+}
+/* Styles for links INSIDE the mobile menu */
+nav.mobile-nav-menu ul.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav.mobile-nav-menu ul.nav-links li {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+}
+nav.mobile-nav-menu ul.nav-links a {
+    display: block;
+    padding: 1em 0;
+    font-size: 1.1rem;
+    color: #ffffff; /* Should be white */
+    text-decoration: none;
+    font-family: 'Headers', Arial, sans-serif;
+}
+nav.mobile-nav-menu ul.nav-links a::after {
+    display: none; /* No underline for mobile menu items */
+}
+
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-left:40px;
+}
+
+.lang-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-family: 'Headers', Arial, sans-serif; /* Added fallback */
+    padding: 5px 8px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease; /* color transition for scroll */
+}
+
+.lang-link.active-lang {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.lang-link:not(.active-lang):hover {
+    text-decoration: underline;
+}
+
+/* Scrolled State Adjustments for Header Elements */
+
+
+header.scrolled .header-logo-img {
+    filter: invert(0); /* Or filter: none; */
+}
+
+header.scrolled .nav-links a::after { /* Underline color on scroll */
     background-color: #000000;
 }
 
-.nav-links a:hover::after {
-    width: 100%;
+header.scrolled .lang-link.active-lang {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Scrolled state for DESKTOP links */
+header.scrolled .desktop-nav ul.nav-links a,
+header.scrolled .language-switcher .lang-link {
+    color: #000000;
+}
+header.scrolled .desktop-nav ul.nav-links a::after {
+    background-color: #000000;
 }
 
 /* Home section - inspired by Bobak */
@@ -271,20 +370,11 @@ header.scrolled .nav-links a::after {
     opacity: 0.7;
 }
 
-.masonry-gallery { /* Rename back from .grid if needed */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-    padding: 10px 0;
-    /* NO grid-auto-flow: dense */
-    /* NO align-items: start needed */
-}
-
 
 .grid {
     columns: 4;
     column-gap: 4px;
-} 
+}
 
 /* === Base Gallery Item Styles (Keep this, it's mostly correct for Grid) === */
 .gallery-item {
@@ -293,27 +383,6 @@ header.scrolled .nav-links a::after {
         position: relative; /* If using overlays */
 }
 
-/* === ADD Aspect Ratio Based Spanning Classes === */
-/* Adjust span values based on grid-auto-rows and testing */
-/* Example: With grid-auto-rows: 10px; */
-/* .gallery-item--landscape { grid-row: span 15; } /* Approx 250px high */
-/* .gallery-item--portrait  { grid-row: span 42; } /* Approx 400px high */
-/* .gallery-item--square    { grid-row: span 32; } Approx 320px high */
-/* Add more variations if needed */
-
-/* === ADD THESE Modifier Classes for Spanning === */
-/*.gallery-item--v-stretch {
-    grid-row: span 25; /* Taller item (25 * 20px = 500px) - Adjust span */
-/*}
-
-.gallery-item--h-stretch {
-    grid-column: span 2 ; /* Wider item */
-/*}
-
-/* Adjust span for items that are both tall AND wide */
-/* .gallery-item--v-stretch.gallery-item--h-stretch {
-    grid-row: span 25; /* Or desired tall span */
-    /* grid-column: span 2; Or desired wide span */
 
 
 /* === Image Styles within Item === */
@@ -321,9 +390,15 @@ header.scrolled .nav-links a::after {
     width:100%;
     height: auto;
     margin-bottom: 3px;
+    display: block;
+    opacity: 0;
     /* display: block; Remove extra space below image */
-    transition: transform 0.5s ease, opacity 0.5s ease; 
+    transition: opacity 0.4s ease-out;
     /* object-fit: contain; */
+}
+
+.gallery-item img.loaded {
+    opacity: 1;
 }
 
 .gallery-item a:hover img {
@@ -459,9 +534,16 @@ footer {
     gap: 20px; /* Add gap for when items wrap */
 }
 
-.footer-logo {
-    font-size: 1.7rem;
-    font-weight: 500;
+.footer-logo-container a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-logo-img {
+    height: 50px; /* Example: Set a specific height for your logo */
+    width: auto;  /* Let width adjust automatically to maintain aspect ratio */
+    display: block; /* Good for images to avoid extra space */
+    filter: invert();
 }
 
 .footer-links {
@@ -522,6 +604,56 @@ footer {
     vertical-align: middle; /* Helps align the icon vertically */
 }
 
+/* === Hamburger Menu Specific Styles === */
+
+.nav-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0.5em;
+    z-index: 1001; /* Ensure it's above other header content if needed */
+}
+
+.hamburger-icon {
+    display: block;
+    position: relative;
+    width: 2em; /* Adjust size as needed */
+    height: 3px; /* Thickness of lines */
+    background-color: #ffffff; /* Color of the middle line */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Scrolled state for hamburger icon color */
+header.scrolled .hamburger-icon {
+    background-color: #000000;
+}
+header.scrolled .hamburger-icon::before,
+header.scrolled .hamburger-icon::after {
+    background-color: #000000;
+}
+
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Thickness of lines */
+    background-color: #ffffff; /* Color of top/bottom lines */
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hamburger-icon::before {
+    top: -0.6em; /* Spacing of top line */
+}
+
+.hamburger-icon::after {
+    bottom: -0.6em; /* Spacing of bottom line */
+}
+
+
 /* --- Responsive Adjustments for Footer --- */
 @media (max-width: 768px) {
     .footer-container {
@@ -544,8 +676,21 @@ footer {
     }
 }
 
+
+
 /* Responsive styles */
 
+@media (max-width: 600px) {
+    .masonry-gallery { /* Or .gallery-grid */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: 10px;
+        column-gap: 10px;
+    }
+    /* Adjust spans for mobile if desired */
+    .gallery-item--landscape { grid-row: span 20; }
+    .gallery-item--portrait  { grid-row: span 35; }
+    .gallery-item--square    { grid-row: span 28; }
+}
 @media (max-width: 1024px) {
     .home-content h1 {
         font-size: 3.5rem;
@@ -562,12 +707,158 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    /* === Header Bar Layout === */
     header {
-        padding: 20px 0;
+        padding: 15px 0;
+    }
+    .header-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0 15px; /* Consistent padding for the header bar */
     }
 
+    /* Hide Desktop Navigation Area */
+    .header-desktop-nav-area {
+        display: none !important;
+    }
+
+    /* Logo Styling & Centering */
+    .logo-link {
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block; /* For auto margins to work with flex */
+        line-height: 0;
+        /* order: 0; /* Default order, will be between hamburger and potential right-side element */
+    }
+    .header-logo-img {
+        height: 35px;
+    }
+
+    /* Hamburger Toggle Button */
+    .nav-toggle {
+        display: block;
+        order: -1; /* Moves it to the far left */
+        position: static; /* Let it flow in the flex container */
+        /* margin-right: 10px; /* Add space if needed between toggle and logo */
+        /* Base styles for .nav-toggle (padding, border, cursor) should be outside media query */
+    }
+
+    /* === Mobile Slide-Out Menu Container === */
+    nav.mobile-nav-menu { /* Your <nav class="nav mobile-nav-menu"> */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70%; /* Or your preferred width */
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(20, 20, 20, 0.95);
+        backdrop-filter: blur(5px);
+        transform: translateX(-100%); /* Initially hidden */
+        transition: transform 0.4s ease-in-out;
+        z-index: 999;
+        padding-top: 70px; /* Space for close button or top spacing */
+        overflow-y: auto; /* If content overflows */
+    }
+
+    nav.mobile-nav-menu.nav-open { /* When JS adds .nav-open */
+        transform: translateX(0%);
+    }
+
+    /* === Styles for items INSIDE the Mobile Slide-Out Menu === */
+    nav.mobile-nav-menu ul.nav-links { /* Targeting the UL inside the mobile menu */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the li items if they are not full width */
+        list-style: none;
+        padding: 0;
+        margin: 0; /* Reset margin, control spacing with padding on .nav or li */
+    }
+
+    nav.mobile-nav-menu ul.nav-links li {
+        margin-left: 0; /* Reset desktop margin */
+        width: 100%;    /* Make list items take full width of the menu */
+        text-align: center; /* Center the text within the <a> tag */
+    }
+
+    nav.mobile-nav-menu ul.nav-links li a { /* Targeting the <a> tags */
+        display: block; /* Make link take full width of its <li> */
+        padding: 1em 15px; /* Vertical and some horizontal padding for touch area */
+        font-size: 1.1rem; /* Consistent font size for mobile menu */
+        color: #ffffff !important; /* Ensure white color, use !important if overridden */
+        text-decoration: none;
+        font-family: 'Headers', Arial, sans-serif; /* Consistent font */
+        transition: background-color 0.2s ease;
+    }
+
+    nav.mobile-nav-menu ul.nav-links li a:hover,
+    nav.mobile-nav-menu ul.nav-links li a:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    nav.mobile-nav-menu ul.nav-links li a::after { /* No underline for mobile menu */
+        display: none;
+    }
+
+    /* Language Switcher specific styles within the mobile menu */
+    nav.mobile-nav-menu li.mobile-lang-switcher-item {
+        margin-top: 25px; /* Space above language switcher */
+        padding-bottom: 25px; /* Space below */
+        /* text-align: center; /* Inherited from parent li */
+    }
+
+    nav.mobile-nav-menu div.language-switcher { /* The div itself */
+        display: flex;
+        justify-content: center; /* Center ES | EN within the div */
+        align-items: center;
+        position: static; /* Reset any desktop positioning */
+        margin-left: 0;   /* Reset desktop margin */
+        /* padding: 10px 0; /* Padding applied to <a> now */
+    }
+
+    nav.mobile-nav-menu div.language-switcher .lang-link,
+    nav.mobile-nav-menu div.language-switcher span {
+        color: #ffffff !important; /* Ensure white */
+        font-size: 1rem; /* Consistent size with other nav links */
+        font-family: 'Headers', Arial, sans-serif; /* Consistent font */
+        /* Padding is on the <a> tag in the general rule above */
+    }
+    /* Active lang style for mobile menu */
+    nav.mobile-nav-menu div.language-switcher .lang-link.active-lang {
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 0.15); /* Slightly different active style for menu */
+    }
+
+
+    /* Hamburger Icon Animation to "X" when nav is open */
+    /* Ensure these selectors are specific enough if .nav-open is on the menu container */
+    nav.mobile-nav-menu.nav-open ~ .nav-toggle .hamburger-icon, /* If toggle is outside .nav */
+    .nav-toggle[aria-expanded="true"] .hamburger-icon { /* If JS sets aria-expanded on toggle */
+        transform: rotate(45deg);
+        background-color: #ffffff; /* Ensure white for "X" */
+    }
+    nav.mobile-nav-menu.nav-open ~ .nav-toggle .hamburger-icon::before,
+    .nav-toggle[aria-expanded="true"] .hamburger-icon::before {
+        top: 0;
+        transform: rotate(90deg);
+        background-color: #ffffff;
+    }
+    nav.mobile-nav-menu.nav-open ~ .nav-toggle .hamburger-icon::after,
+    .nav-toggle[aria-expanded="true"] .hamburger-icon::after {
+        bottom: 0;
+        opacity: 0;
+        transform: rotate(-90deg);
+        background-color: #ffffff;
+    }
+    /* Adjust hamburger color for scrolled header when menu is NOT open */
+    header.scrolled .nav-toggle .hamburger-icon,
+    header.scrolled .nav-toggle .hamburger-icon::before,
+    header.scrolled .nav-toggle .hamburger-icon::after {
+        background-color: #000000; /* Black hamburger on white scrolled header */
+    }
     .home-content h1 {
-        font-size: 2.0rem;
+        font-size: 2.5rem;
     }
 
     .home-content p {
@@ -582,6 +873,12 @@ footer {
     .gallery-header h2 {
         font-size: 2.5rem;
         margin-bottom: 20px;
+    }
+
+    .grid {
+        columns: 2;
+        column-gap: 8px;
+
     }
 
     .contact-info h2 {
@@ -600,6 +897,7 @@ footer {
     .footer-links li {
         margin: 0 15px;
     }
+
 }
 
 /* --- About/Bio Section Specific Styles --- */
