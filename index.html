@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMAH STUDIO | Archviz Studio ꟾ Visualización Arquitectónica</title>
-    
+
      <!-- Your stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
@@ -44,7 +44,7 @@
         <span>SCROLL</span>
         <div class="scroll-arrow"></div>
     </div>
-    
+
 </section>
     <!-- Gallery section -->
 <section id="gallery">
@@ -84,7 +84,7 @@
                     <img src="imagenes/imagenes reales/017.jpg" loading="lazy">
                 </a>
             </div>
-            
+
             <div class="gallery-item">
                 <a href="imagenes/imagenes reales/021.jpeg" class="glightbox" data-gallery="main-gallery">
                     <img src="imagenes/imagenes reales/021.jpeg" loading="lazy">
@@ -95,7 +95,7 @@
                     <img src="imagenes/imagenes reales/025.jpg" loading="lazy">
                 </a>
             </div>
-            
+
             <div class="gallery-item">
                 <a href="imagenes/imagenes reales/030.jpg" class="glightbox" data-gallery="main-gallery">
                     <img src="imagenes/imagenes reales/030.jpg" loading="lazy">
@@ -193,8 +193,8 @@
             </div>
 
             <div class="gallery-item">
-                <a href="imagenes/imagenes reales/042.png" class="glightbox" data-gallery="main-gallery">
-                    <img src="imagenes/imagenes reales/042.png" loading="lazy">
+                <a href="imagenes/imagenes reales/042.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/042.jpg" loading="lazy">
                 </a>
             </div>
 
@@ -214,7 +214,7 @@
                 <a href="imagenes/imagenes reales/055.jpg" class="glightbox" data-gallery="main-gallery">
                     <img src="imagenes/imagenes reales/055.jpg" loading="lazy">
                 </a>
-            </div>           
+            </div>
 
             <div class="gallery-item">
                 <a href="imagenes/imagenes reales/003.jpeg" class="glightbox" data-gallery="main-gallery">
@@ -322,7 +322,7 @@
                     <img src="imagenes/imagenes reales/016.jpg" loading="lazy">
                 </a>
             </div>
-            
+
             <div class="gallery-item">
                 <a href="imagenes/imagenes reales/020.jpeg" class="glightbox" data-gallery="main-gallery">
                     <img src="imagenes/imagenes reales/020.jpeg" loading="lazy">
@@ -381,12 +381,12 @@
 
     </div>
 </section>
-    
-        
+
+
 <!-- About Section (Formerly Bio) - UPDATED -->
 <section id="about">
     <div class="container">
-        <h2>Sobre Nosotros</h2> 
+        <h2>Sobre Nosotros</h2>
         <p>
             Somos FORMAH, una oficina creativa enfocada en dar vida a proyectos arquitectónicos a través de renders hiperrealistas. Nos apasiona la visualización arquitectónica, y usamos la imagen como una herramienta para contar historias, emocionar y mostrar el potencial de cada espacio.
         </p>
@@ -476,7 +476,7 @@
                     selector: '.glightbox[data-gallery="main-gallery"]', // Use selector
                     draggable: false,
                     touchNavigation: false,
-                    keyboardNavigation: false, 
+                    keyboardNavigation: false,
                     loop: false,
                     // ... other options
                 });
@@ -485,7 +485,7 @@
                 console.error("Error during simple GLightbox init:", error);
             }
 
-      
+
 
 
         // --- Keep Your Existing Header Scroll / Smooth Scroll JS Here ---
@@ -506,6 +506,21 @@
                 behavior: 'smooth'
             });
         });
+    });
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+        if (img.complete && img.naturalHeight !== 0) { // Check for actual image dimensions
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            }, { once: true });
+            img.addEventListener('error', () => { // Good to have an error handler
+                console.warn('Image failed to load:', img.src);
+                // You could even add an 'error' class here to style broken images
+                // img.classList.add('image-error');
+            }, { once: true });
+        }
     });
         // --- End Other JS ---
 
