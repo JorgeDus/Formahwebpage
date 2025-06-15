@@ -876,7 +876,7 @@ header.scrolled .hamburger-icon::after {
     }
 
     .grid {
-        columns: 2;
+        columns: 4;
         column-gap: 8px;
 
     }
