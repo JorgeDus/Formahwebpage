@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMAH STUDIO | Archviz Studio ꟾ Architectural Visualization</title>
+    
+     <!-- Your stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- 🔌 GLightbox CSS (add this line) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+   <!-- Font Awesome CDN (Add this line) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header with navigation -->
+<header>
+    <div class="container header-container">
+
+        <a href="#home" class="logo-link">
+            <img src="imagenes/FORMAH.png" alt="FORMAH STUDIO Logo" class="header-logo-img">
+        </a>
+
+
+        <div class="header-desktop-nav-area"> 
+            <nav class="desktop-nav"> 
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <a href="index.html" class="lang-link">ES</a>
+                <span>|</span>
+                <a href="index en.html" class="lang-link active-lang">EN</a> 
+            </div>
+        </div>
+
+
+        <button class="nav-toggle" aria-label="toggle navigation" aria-expanded="false">
+            <span class="hamburger-icon"></span>
+        </button>
+
+        <nav class="nav mobile-nav-menu"> 
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="mobile-lang-switcher-item">
+                    <div class="language-switcher">
+                        <a href="index.html" class="lang-link">ES</a>
+                        <span>|</span>
+                        <a href="index en.html" class="lang-link active-lang">EN</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+
+<!-- Home section -->
+<section id="home">
+    <div class="home-background">
+        <!-- Replace the iframe with this video tag -->
+        <video playsinline autoplay muted loop poster="images/fallback-image.jpg"> {/* Optional: Poster image */}
+            <!-- Provide video sources - Browser picks the first it supports -->
+            <source src="Pucon Life Final 480.webm" type="video/webm"> {/* Preferred format first */}
+            Your browser does not support the video tag. {/* Fallback text */}
+        </video>
+        <!-- End of video tag replacement -->
+    </div>
+
+    <div class="scroll-indicator">
+        <span>SCROLL</span>
+        <div class="scroll-arrow"></div>
+    </div>
+    
+</section>
+    <!-- Gallery section -->
+<section id="gallery">
+    <div class="container">
+        <div class="gallery-header">
+            <h2>Gallery</h2>
+        </div>
+
+        <div class="grid">
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/001.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/001.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/005.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/005.jpeg" loading="lazy">
+               </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/009.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/009.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/013.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/013.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/017.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/017.jpg" loading="lazy">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/021.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/021.jpeg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/025.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/025.jpg" loading="lazy">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/030.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/030.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/035.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/035.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/041.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/041.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/045.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/045.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/049.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/049.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/054.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/054.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/002.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/002.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/015.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/006.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/010.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/010.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/014.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/014.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/018.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/018.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/022.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/022.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/026.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/026.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/027.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/027.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/031.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/031.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/036.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/036.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/042.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/042.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/046.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/046.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/050.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/050.jpg" loading="lazy">
+                </a>
+            </div>
+
+             <div class="gallery-item">
+                <a href="imagenes/imagenes reales/055.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/055.jpg" loading="lazy">
+                </a>
+            </div>           
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/003.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/003.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/007.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/007.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/011.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/011.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/015.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/015.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/019.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/019.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/023.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/023.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/028.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/028.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/032.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/032.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/037.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/037.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/043.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/043.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/047.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/047.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/051.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/051.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/056.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/056.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/057.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/057.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/004.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/004.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/008.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/008.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/012.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/012.jpeg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/016.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/016.jpg" loading="lazy">
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/020.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/020.jpeg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/024.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/024.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/029.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/029.jpeg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/033.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/033.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/039.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/039.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/044.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/044.jpeg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/048.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/048.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/052.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/052.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/053.jpg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/053.jpg" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="imagenes/imagenes reales/058.jpeg" class="glightbox" data-gallery="main-gallery">
+                    <img src="imagenes/imagenes reales/058.jpeg" loading="lazy">
+                </a>
+            </div>
+            <!-- {/* Add more gallery items here, applying stretch classes as needed */} -->
+
+        </div>
+        <!-- {/* End .gallery-grid */} -->
+
+    </div>
+</section>
+    
+        
+<!-- About Section (Formerly Bio) - UPDATED -->
+<section id="about">
+    <div class="container">
+        <h2>About Us</h2> 
+        <p>
+            We are FORMAH, a creative studio focused on bringing architectural projects to life through hyper-realistic renders. We are passionate about architectural visualization, and we use imagery as a tool to tell stories, evoke emotions, and showcase the potential of each space.
+        </p>
+        <p>
+            Our way of working is close and collaborative. We listen, ask questions, propose ideas, and pay attention to every detail. We adapt to each project and each team, because we know every idea is unique and deserves a tailored approach.
+        </p>
+        <p class="artist-name">Nicolas Dussert</p>
+    </div>
+</section>
+
+    <!-- Contact section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact</h2>
+                    <p>info@formah.studio</p>
+                    <p>We're always open to new projects and collaborations. Share your vision with us, and we’ll turn it into 3D visualizations.</p>
+                </div>
+
+                <div class="contact-form-container">
+                    <form action="https://formsubmit.co/info@formah.studio" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project">Proyect Details</label>
+                            <textarea id="project" name="project" required></textarea>
+                        </div>
+
+                        <input type="hidden" name="_next" value="https://jorgedus.github.io/ser3dstudiotest/thank-you.html">
+                        <input type="hidden" name="_subject" value="New Submission from Portfolio Website!">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <button type="submit" class="submit-button">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo-container">
+                <a href="#home">
+                    <img src="imagenes/FORMAH.png" alt="FORMAH STUDIO logo" class="footer-logo-img">
+                </a>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.instagram.com/formah.studio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.behance.net/ndussertv" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                        <i class="fa-brands fa-behance"></i>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- 📚 GLightbox JS (Add this line) -->
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+
+
+    <script>
+        // Wait for the HTML content to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+
+            console.log("Attempting SIMPLE GLightbox init...");
+            try {
+                const lightboxSimple = GLightbox({
+                    selector: '.glightbox[data-gallery="main-gallery"]', // Use selector
+                    draggable: false,
+                    touchNavigation: false,
+                    keyboardNavigation: false, 
+                    loop: false,
+                    // ... other options
+                });
+                console.log("GLightbox (No Arrows) init called.");
+            } catch(error) {
+                console.error("Error during simple GLightbox init:", error);
+            }
+
+      
+
+
+        // --- Keep Your Existing Header Scroll / Smooth Scroll JS Here ---
+
+            // === Hamburger Menu Toggle ===
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav'); // The <nav> element
+    const navLinks = document.querySelectorAll('.nav-links a'); // All links in nav
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('nav-open');
+            // Toggle aria-expanded attribute for accessibility
+            const isExpanded = navMenu.classList.contains('nav-open');
+            navToggle.setAttribute('aria-expanded', isExpanded);
+
+            // Optional: Toggle body scroll
+            // document.body.classList.toggle('no-scroll', isExpanded);
+        });
+    }
+
+    // Close menu when a link is clicked (for single-page navigation)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('nav-open')) {
+                navMenu.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                // document.body.classList.remove('no-scroll');
+            }
+        });
+    });
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+        if (img.complete && img.naturalHeight !== 0) { // Check for actual image dimensions
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            }, { once: true });
+            img.addEventListener('error', () => { // Good to have an error handler
+                console.warn('Image failed to load:', img.src);
+                // You could even add an 'error' class here to style broken images
+                // img.classList.add('image-error');
+            }, { once: true });
+        }
+    });
+        // --- End Other JS ---
+
+        }); // End DOMContentLoaded listener
+    </script>
+
+</body>
+</html>
